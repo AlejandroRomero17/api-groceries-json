@@ -34,7 +34,7 @@ export const insertOne = async (req, res) => {
   productDAO
     .insertOne(req.body)
     // .then(result => res.json({status: "Product saved successfully"}))
-    .then((result) => res.redirect("/api/products/"))
+    .then((result) => res.redirect("/"))
     // .then((result => res.redirect('../src/views/index')))
     .catch((err) => res.json({ status: "Server unavailable" }));
 };
