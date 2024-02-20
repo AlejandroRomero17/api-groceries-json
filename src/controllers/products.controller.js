@@ -49,7 +49,7 @@ export const updateOne = async (req, res) => {
           message: "Product not found",
         });
       } else {
-        res.redirect("/api/products/");
+        res.redirect("/");
         // await Prod
       }
     })
@@ -62,7 +62,7 @@ export const updateOne = async (req, res) => {
 
 export const deleteOne = async (req, res) => {
   productDAO.deleteOne(req.params.barcode, req.body)
-    .then((result) => res.redirect("/api/products"))
+    .then((result) => res.redirect("/"))
     // .then((result) => res.render(result))
     .catch((err) => res.json({ status: "Server unavailable" }));
 };
