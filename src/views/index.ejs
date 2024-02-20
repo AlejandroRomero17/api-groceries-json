@@ -23,7 +23,7 @@
             </div><!-- /navbar -->
         </div>
         <div data-role="content">
-            <form action="/api/products/" method="POST">
+            <form action="/" method="POST">
 
                 <input type="text" name="barcode" id="txt_barcode" placeholder="Código de barras">
 
@@ -82,8 +82,8 @@
                             <li> Status
                                 <%= product.status %>
                             </li>
-                            <li><a href="/api/products/<%= product.barcode %>" class="ui-btn">Editar</a></li>
-                            <li><a href="/api/products/delete/<%= product.barcode %>" class="ui-btn">Eliminar</a></li>
+                            <li><a href="/<%= product.barcode %>" class="ui-btn">Editar</a></li>
+                            <li><a href="/delete/<%= product.barcode %>" class="ui-btn">Eliminar</a></li>
                         </ul>
                     </div>
                     <%}) %>

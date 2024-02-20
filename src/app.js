@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // Corregido
 // Utiliza el middleware Morgan para el registro de solicitudes HTTP en modo 'dev'.
 app.use(morgan("dev"));
-app.use("/api/products", productsRouter);
+app.use(productsRouter);
 
 // Exporta la instancia de la aplicación Express para su uso en otros archivos.
 export default app;

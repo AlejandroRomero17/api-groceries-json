@@ -23,7 +23,7 @@
             </div><!-- /navbar -->
         </div>
         <div data-role="content">
-            <form action="/api/products/<%= product.barcode %>" method="POST">
+            <form action="/<%= product.barcode %>" method="POST">
 
                 <input type="text" name="barcode" id="txt_barcode" placeholder="Código de barras"
                     value="<%= product.barcode %>">
