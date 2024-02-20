@@ -3,7 +3,7 @@ import productDAO from "../dao/products.dao.js";
 export const getAll = (req, res) => {
   productDAO
     .getAll()
-    .then((products) => res.render("../src/Views/index", { products }))
+    .then((products) => res.render("../src/views/index", { products }))
     .catch((err) =>
       res.json({
         status: "Server unavailable",
