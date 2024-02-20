@@ -16,11 +16,10 @@ export const getOne = (req, res) => {
     .getOne(req.params.barcode)
     .then((product) => {
       !product
-        ? req.json({
-            message: "product not found",
+        ? res.json({
+            message: "Product not found",
           })
-        : // : res.json(result);
-          res.json("../src/views/edit", { product });
+        : res.json({ product });
     })
     .catch((err) =>
       res.json({
@@ -33,9 +32,7 @@ export const insertOne = async (req, res) => {
   console.log(req.body);
   productDAO
     .insertOne(req.body)
-    // .then(result => res.json({status: "Product saved successfully"}))
-    .then((result) => res.redirect("/"))
-    // .then((result => res.redirect('../src/views/index')))
+    .then((result) => res.json({ status: "Product saved successfully" }))
     .catch((err) => res.json({ status: "Server unavailable" }));
 };
 
@@ -49,8 +46,7 @@ export const updateOne = async (req, res) => {
           message: "Product not found",
         });
       } else {
-        res.redirect("/");
-        // await Prod
+        res.json({ status: "Product updated successfully" });
       }
     })
     .catch((err) => {
@@ -61,8 +57,8 @@ export const updateOne = async (req, res) => {
 };
 
 export const deleteOne = async (req, res) => {
-  productDAO.deleteOne(req.params.barcode, req.body)
-    .then((result) => res.redirect("/"))
-    // .then((result) => res.render(result))
+  productDAO
+    .deleteOne(req.params.barcode)
+    .then((result) => res.json({ status: "Product deleted successfully" }))
     .catch((err) => res.json({ status: "Server unavailable" }));
 };
