@@ -28,6 +28,8 @@ export const getOne = (req, res) => {
     );
 };
 
+// ...
+
 export const insertOne = async (req, res) => {
   console.log(req.body);
   productDAO
