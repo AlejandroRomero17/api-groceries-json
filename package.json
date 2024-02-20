@@ -5,11 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "uwu": "nodemon src/index.js",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "start": "serve dist -s -n -L -p $PORT"
+    "start": "node src/index.js",
+    "uwu": "nodemon src/index.js"
   },
   "author": "",
   "license": "ISC",
